@@ -1,44 +1,27 @@
-const readline = require("readline");
-const prompt = readline.createInterface(
-{
-    input:process.stdin,
-    output:process.stdout,
-})
-function generateGrade(){
-    prompt.question('please enter student marks',function(marks){
-       // marks =parseFloat(marks);
-        let grade;
-        console.log(marks)
-    switch(true)
-    {
-        case marks > 79:
-            grade = 'A';
-            break;
+function detectSpeed(speed){
+    if(speed <= 70 ){
+        console.log("Ok");
         
-        case marks >= 60:
-            grade = 'B';
-            break;
-
-        case marks >= 49:
-            grade = 'C';
-            break;
-
-        case marks >= 40:
-            grade = 'D';
-            break;
-
-        case marks < 40:
-            grade = 'E';
-            break;
-
-        default:
-            grade = "invalid grade";
-        }
-        console.log(grade)
-    prompt.close()
-        return grade;
-    })
-   
-}    
-generateGrade()
+    }
+    else if(speed > 70){
+        let demeritPoints = 0;
+        let excess = speed - 70;
+        demeritPoints = Math.floor(excess/5);
+        if(demeritPoints > 12)
+            {
+                console.log("License suspended");
+            }else{
+                console.log('points:',demeritPoints);
+            }
+       
+    }else{
+        console.log("invalid input");
+        
+    }
+        return;
     
+
+}
+detectSpeed(91);
+detectSpeed(150);
+detectSpeed(70);
