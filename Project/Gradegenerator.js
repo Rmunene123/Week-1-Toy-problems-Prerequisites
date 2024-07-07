@@ -1,14 +1,7 @@
-const readline = require("readline");
-const prompt = readline.createInterface(
-{
-    input:process.stdin,
-    output:process.stdout,
-})
-function generateGrade(){
-    prompt.question('please enter student marks',function(marks){
-       // marks =parseFloat(marks);
+function generateGrade(marks){
+    
         let grade;
-        console.log(marks)
+        
     switch(true)
     {
         case marks > 79:
@@ -35,10 +28,11 @@ function generateGrade(){
             grade = "invalid grade";
         }
         console.log(grade)
-    prompt.close()
-        return grade;
-    })
-   
-}    
-generateGrade()
     
+        return grade;
+    }
+   
+console.log("please enter marks")   
+generateGrade(79);
+generateGrade(55);
+generateGrade(40);    
