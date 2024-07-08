@@ -125,7 +125,7 @@ function netSalaryCalculator(grossSalary){
     console.log("------------------------------------------------");
 
 }
-   netSalaryCalculator(34000);
+   netSalaryCalculator(60000);
    netSalaryCalculator(50000);
    netSalaryCalculator(74000);        
 

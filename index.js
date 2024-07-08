@@ -105,8 +105,8 @@ function netSalaryCalculator(grossSalary){
     }
 
     //Calculate nssf
-    if(grossSalary > 6000){
-        nssf = 6000 * 0.06;
+    if(grossSalary > 36000){
+        nssf = 34000 * 0.06;
     }else{
         nssf=grossSalary * 0.06;
     }
@@ -126,7 +126,7 @@ function netSalaryCalculator(grossSalary){
 
 }
    netSalaryCalculator(100000);
-   netSalaryCalculator(50000);
+   netSalaryCalculator(60000);
    netSalaryCalculator(74000);        
 
         
