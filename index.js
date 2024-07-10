@@ -1,137 +1,48 @@
-function netSalaryCalculator(grossSalary){
-    let tax;
-    let nhif;
-    let nssf;
-    let netSalary;
-
-    //Calculate PAYE
-    switch(true){
-        case grossSalary > 800000:
-            tax = grossSalary * 0.35;
-            break;
-
-        case grossSalary > 500000:
-            tax = grossSalary * 0.325;
-            break;
-
-        case grossSalary > 32333:
-            tax = grossSalary * 0.3;
-            break;
-
-        case grossSalary > 24000:
-            tax = grossSalary * 2.5;
-            break;
-
-        case grossSalary < 24000:
-            tax = grossSalary * 0.1;
-            break;
-
-        default:
-            tax = 0
- }
-
-    //Calculate nhif
-    switch(true){
-        case grossSalary > 100000:
-            nhif = 1700;
-            break;
-
-        case grossSalary >= 90000:
-            nhif = 1600;
-            break;
-
-        case grossSalary >= 80000:
-            nhif = 1500;
-            break;
-
-        case grossSalary >= 70000:
-            nhif = 1400;
-            break;
-
-        case grossSalary >= 60000:
-            nhif = 1300;
-            break;
-
-        case grossSalary >= 50000:
-            nhif = 1200;
-            break;
-
-        case grossSalary >= 45000:
-            nhif = 1100;
-            break;
-
-        case grossSalary >= 40000:
-            nhif = 1000;
-            break;
-
-        case grossSalary > 35000:
-            nhif = 950;
-            break;
-
-        case grossSalary >= 30000:
-            nhif = 900;
-            break;
-
-        case grossSalary >= 25000:
-            nhif = 850;
-            break;
-
-        case grossSalary >= 20000:
-            nhif = 800;
-            break;
-                
-        case grossSalary >= 15000:
-            nhif = 750;
-            break;
-
-        case grossSalary >= 12000:
-            nhif =500;
-            break;
-
-        case grossSalary >= 8000:
-            nhif = 400;
-            break;
-
-        case grossSalary >= 6000:
-            nhif = 300;
-            break;
-                
-        case grossSalary < 5999:
-            nhif = 150;
-            break;
-
-        default:
-            nhif = 0;
-    }
-
-    //Calculate nssf
+//Defeine a function named generateGrade that takes a parameter marks
+function generateGrade(marks){
     
-    if(grossSalary <= 36000){
-        nssf = 0.06 * grossSalary
-    }else if(grossSalary > 36000){
-        nssf = 36000 * 0.06
-    }
+    //Declare a variable grade to sore the grade
+            let grade;
+     
+    //Use a switch statement with a condition true
+        switch(true)
+        {
+            case marks > 79:
+                grade = 'A';
+                break;
+            
+            case marks >= 60:
+                grade = 'B';
+                break;
     
-    //Calculate net salary
-    netSalary = grossSalary - nhif - nssf -tax ;
+            case marks >= 49:
+                grade = 'C';
+                break;
     
-    console.log("equivalent to gross:",grossSalary);
-    console.log("equivalent to nhif:",nhif);
-    console.log("equivalent to nssf:",nssf);
-    console.log("equivalent to tax:",tax);
+            case marks >= 40:
+                grade = 'D';
+                break;
     
-    console.log("equivalent to netSalary:",netSalary);
+            case marks < 40:
+                grade = 'E';
+                break;
     
-
-    console.log("------------------------------------------------");
-
-}
-   
-   netSalaryCalculator(20000)
-   netSalaryCalculator(50000);
-   netSalaryCalculator(74000);        
-
+                // Default case if none of the above conditions match
+            default:
+                grade = "invalid grade";
+            }
+            
+            //print the grade to the console
+            console.log(grade)
         
- 
-
-
+            //return the calculated grade
+            return grade;
+        }
+       
+    console.log("please enter marks")   
+    
+    // Call the generateGrade function with different test cases
+    generateGrade(79);
+    generateGrade(55);
+    generateGrade(40);    
+    
